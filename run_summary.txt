@@ -1,0 +1,8 @@
+Cleaned rows: 889
+Missing percentages: Age 19.87%, Cabin 77.10%, Embarked 0.22%
+IQR outliers: Age 65, Fare 114
+Fare mean=32.0967, median=14.4542, mode=8.0500, skew=4.8014 => right-skewed
+Top correlations: [(np.float64(0.5481932852366449), 'Pclass', 'Fare', np.float64(-0.5481932852366449)), (np.float64(0.4145416380997264), 'SibSp', 'Parch', np.float64(0.4145416380997264))]
+Best classifier by F1: Logistic Regression
+Grid best: {'model__max_depth': None, 'model__max_features': 'sqrt', 'model__n_estimators': 300}; OOB=0.8073
+Regression heteroscedasticity: residual spread visibly widens at higher predicted fares; conclude likely heteroscedasticity.
