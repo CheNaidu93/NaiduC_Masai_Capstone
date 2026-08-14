@@ -1,3 +1,10 @@
+fastapi
+uvicorn[standard]
+pydantic>=2
+langgraph
+chromadb
+sentence-transformers
+numpy
 # Data Pipeline Requirements
 # Minimal dependencies for web scraping, cleaning, and database operations
 
