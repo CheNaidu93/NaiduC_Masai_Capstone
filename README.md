@@ -1,5 +1,3 @@
-# NaiduC_Masai_Capstone
-Masai Capstone project
 # Data Pipeline — Zepto Capstone
 
 ## Overview
@@ -375,3 +373,14 @@ Books to Scrape
 ```
 
 The implementation deliberately uses a fixed conversion rate rather than an external currency API because the assignment defines 1 GBP = 105.50 INR as the required grading baseline.
+
+## Currency Conversion
+
+The project-defined fixed conversion rate is:
+
+1 GBP = 105.50 INR
+
+This is an artificial fixed baseline supplied by the assignment.
+No live currency API is used.
+
+price_inr = price_gbp × 105.50
