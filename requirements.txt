@@ -5,3 +5,10 @@ langgraph
 chromadb
 sentence-transformers
 numpy
+# Data Pipeline Requirements
+# Minimal dependencies for web scraping, cleaning, and database operations
+
+requests>=2.31.0              # HTTP requests for web scraping
+beautifulsoup4>=4.12.0        # HTML parsing for scraping
+pandas>=1.5.0                 # Data manipulation and analysis
+sqlite3                        
