@@ -1,53 +1,31 @@
-import os
+from pathlib import Path
 import joblib
 import pandas as pd
 
+ROOT = Path(__file__).resolve().parent
+MODEL = ROOT / "artifacts" / "best_pipeline.joblib"
 
-BASE_DIR = os.path.dirname(
-    os.path.abspath(__file__)
+pipeline = joblib.load(MODEL)
+
+# Raw/unprocessed input: the pipeline performs imputation,
+# encoding and scaling internally.
+new_passenger = pd.DataFrame(
+    [
+        {
+            "Pclass": 3,
+            "Sex": "male",
+            "Age": 30,
+            "SibSp": 0,
+            "Parch": 0,
+            "Fare": 8.05,
+            "Embarked": "S",
+        }
+    ]
 )
 
-PIPELINE_PATH = os.path.join(
-    BASE_DIR,
-    "artifacts",
-    "best_pipeline.joblib"
-)
+prediction = pipeline.predict(new_passenger)
 
-
-# Raw new passenger data.
-# No preprocessing is performed here.
-
-new_passenger = pd.DataFrame({
-    "pclass": [1],
-    "sex": ["female"],
-    "age": [30],
-    "sibsp": [0],
-    "parch": [0],
-    "fare": [100.0],
-    "embarked": ["C"]
-})
-
-
-pipeline = joblib.load(
-    PIPELINE_PATH
-)
-
-
-prediction = pipeline.predict(
-    new_passenger
-)
-
-probability = pipeline.predict_proba(
-    new_passenger
-)[:, 1]
-
-
-print(
-    "Prediction:",
-    prediction[0]
-)
-
-print(
-    "Survival probability:",
-    probability[0]
-)
+print("Raw input:")
+print(new_passenger)
+print("\nReloaded pipeline prediction:")
+print(prediction)
