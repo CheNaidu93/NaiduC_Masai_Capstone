@@ -5,6 +5,13 @@ langgraph
 chromadb
 sentence-transformers
 numpy
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+imbalanced-learn
+joblib
 # Data Pipeline Requirements
 # Minimal dependencies for web scraping, cleaning, and database operations
 
