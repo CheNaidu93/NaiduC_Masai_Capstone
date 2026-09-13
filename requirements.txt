@@ -1,3 +1,10 @@
+fastapi
+uvicorn[standard]
+pydantic>=2
+langgraph
+chromadb
+sentence-transformers
+numpy
 pandas
 numpy
 matplotlib
